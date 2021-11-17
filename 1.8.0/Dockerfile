@@ -1,6 +1,6 @@
 FROM openjdk:8-jre
 
-MAINTAINER Jonas Bonno Mikkelsen (https://github.com/JonasBonno)
+MAINTAINER alexcote1 (https://github.com/alexcote1)
 
 # Updating container
 RUN apt-get update && \
@@ -15,7 +15,7 @@ WORKDIR /minecraft
 # Creating user and downloading files
 RUN useradd -m -U minecraft && \
 	mkdir -p /minecraft/world && \
-	wget --no-check-certificate https://api.modpacks.ch/public/modpack/35/2059/server/linux -O serverinstall_35_2059 && \
+	wget --no-check-certificate https://api.modpacks.ch/public/modpack/91/2092/server/linux -O serverinstall_35_2059 && \
 	chmod u+x serverinstall_* && \
 	./serverinstall_* --auto && \
 	rm serverinstall_* && \
